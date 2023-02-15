@@ -2,6 +2,11 @@
 
 ## Homework
 
+### Conceptual Architectural Diagram
+[Lucidchart Link](https://lucid.app/lucidchart/e378d13c-1fa1-44c5-81c3-97fd77da70f0/edit?viewport_loc=-11%2C-27%2C2219%2C1224%2C0_0&invitationId=inv_6e44602c-77fd-48c1-a9a2-93cd1d710cf3)
+
+![Crudder conceptual diagram](https://user-images.githubusercontent.com/125124581/219029947-265dbc9f-d2ab-4468-9a2a-ccef6a741a08.jpeg)
+
 ### Logical Architectural Diagram
 
 [Lucidchart Link](https://lucid.app/lucidchart/636971e6-bc31-48ac-8e87-1900f89f96e2/edit?viewport_loc=-76%2C24%2C2219%2C1224%2C0_0&invitationId=inv_ff1f5fbc-dd5c-4753-8378-a2939af6cf1b)
