@@ -136,3 +136,17 @@ networks:
     name: cruddur
 ```
 
+### Task5: Install postgres client in gitpod updated gitpod.yml
+
+```sh
+  - name: postgres
+    init: |
+      curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
+      echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
+      sudo apt update
+      sudo apt install -y postgresql-client-13 libpq-dev
+```
+
+Tested connection to postgres.
+
+![Screenshot 2023-02-25 at 3 38 07 PM](https://user-images.githubusercontent.com/125124581/221351424-6ffcb877-22d6-4f6f-9ec1-35cd434eeabe.png)
