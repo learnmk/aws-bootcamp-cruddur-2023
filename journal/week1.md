@@ -150,3 +150,8 @@ networks:
 Tested connection to postgres.
 
 ![Screenshot 2023-02-25 at 3 38 07 PM](https://user-images.githubusercontent.com/125124581/221351424-6ffcb877-22d6-4f6f-9ec1-35cd434eeabe.png)
+
+### Task:6 Updated OpenAPI to add notification endpoint.
+
+![Screenshot 2023-02-25 at 6 20 03 PM](https://user-images.githubusercontent.com/125124581/221357884-0a327194-0492-4ec6-97fd-68ce5b557f21.png)
+
