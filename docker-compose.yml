@@ -40,12 +40,10 @@ services:
       - "./docker/dynamodb:/home/dynamodblocal/data"
     working_dir: /home/dynamodblocal
 
-
-volumes:
-  db:
-    driver: local
-  
 networks: 
   internal-network:
     driver: bridge
     name: cruddur
+volumes:
+  db:
+    driver: local
