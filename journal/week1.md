@@ -172,3 +172,10 @@ docker push learnkhaire/cruddur:latest
 
 ![Screenshot 2023-02-26 at 5 40 32 PM](https://user-images.githubusercontent.com/125124581/221409709-61082ff1-4a11-477e-a2dc-fbb2bf200ee8.png)
 
+### Learn how to install Docker on your localmachine and get the same containers running outside of Gitpod
+
+![Screenshot 2023-02-26 at 5 58 01 PM](https://user-images.githubusercontent.com/125124581/221410533-d563b9e0-196c-4811-95fe-ad337a8bdd11.png)
+![Screenshot 2023-02-26 at 5 57 45 PM](https://user-images.githubusercontent.com/125124581/221410543-32160787-951d-4ae6-9070-646ac11b4e4b.png)
+
+
+docker image tag aws-bootcamp-cruddur-2023-frontend-react-js:latest learnkhaire/cruddur:latest
