@@ -155,3 +155,8 @@ Tested connection to postgres.
 
 ![Screenshot 2023-02-25 at 6 20 03 PM](https://user-images.githubusercontent.com/125124581/221357884-0a327194-0492-4ec6-97fd-68ce5b557f21.png)
 
+Manage to create user and see notifications page
+
+![Screenshot 2023-02-26 at 10 52 21 AM](https://user-images.githubusercontent.com/125124581/221408477-c993b04a-7ca2-4b1e-9a6f-2780b772dd3b.png)
+
+
