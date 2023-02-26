@@ -178,4 +178,17 @@ docker push learnkhaire/cruddur:latest
 ![Screenshot 2023-02-26 at 5 57 45 PM](https://user-images.githubusercontent.com/125124581/221410543-32160787-951d-4ae6-9070-646ac11b4e4b.png)
 
 
-docker image tag aws-bootcamp-cruddur-2023-frontend-react-js:latest learnkhaire/cruddur:latest
+### Launch an EC2 instance that has docker installed, and pull a container to demonstrate you can run your own docker processes. 
+
+Added below commands in user data during launching of EC2 instance.
+```sh
+#!/bin/bash
+sudo yum update -y
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo systemctl enable docker
+sudo systemctl enable docker
+```
+
+![Screenshot 2023-02-26 at 6 10 54 PM](https://user-images.githubusercontent.com/125124581/221411469-f6d2fd19-0f0f-4098-a3e3-fb9c9df45358.png)
+
