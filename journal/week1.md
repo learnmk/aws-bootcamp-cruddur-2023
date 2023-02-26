@@ -159,4 +159,16 @@ Manage to create user and see notifications page
 
 ![Screenshot 2023-02-26 at 10 52 21 AM](https://user-images.githubusercontent.com/125124581/221408477-c993b04a-7ca2-4b1e-9a6f-2780b772dd3b.png)
 
+# Homework Challenge
+
+### Push and Tag image to DockerHub
+
+Created new account in Dockerhub. Tag image and push it into Dockerhub.
+
+```sh
+docker image tag aws-bootcamp-cruddur-2023-frontend-react-js:latest learnkhaire/cruddur:latest
+docker push learnkhaire/cruddur:latest
+```
+
+![Screenshot 2023-02-26 at 5 40 32 PM](https://user-images.githubusercontent.com/125124581/221409709-61082ff1-4a11-477e-a2dc-fbb2bf200ee8.png)
 
