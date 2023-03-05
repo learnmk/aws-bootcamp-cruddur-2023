@@ -16,6 +16,7 @@ from services.show_activity import *
 
 #Rollbar
 import rollbar
+import os
 import rollbar.contrib.flask
 from flask import got_request_exception
 
@@ -55,6 +56,7 @@ xray_recorder.configure(service='backend-flask', dynamic_naming=xray_url)
 provider = TracerProvider()
 processor = BatchSpanProcessor(OTLPSpanExporter())
 provider.add_span_processor(processor)
+
 trace.set_tracer_provider(provider)
 tracer = trace.get_tracer(__name__)
 
