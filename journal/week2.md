@@ -3,6 +3,73 @@
 ### TASK 1 
 Instrumented backend flask application to use Open Telemetry (OTEL) with Honeycomb.io as the provider. 
 
+## Installing Honeycomb
+
+On the backend-flask/requirements.text, add required python libraries and install dependancies.
+
+```py
+opentelemetry-api 
+opentelemetry-sdk 
+opentelemetry-exporter-otlp-proto-http 
+opentelemetry-instrumentation-flask 
+opentelemetry-instrumentation-requests
+```
+
+```sh
+pip install -r requirements.txt
+```
+
+Update app.py configuration in backend-flask app with below code.
+
+```py
+# Honeycomb
+from opentelemetry import trace
+from opentelemetry.instrumentation.flask import FlaskInstrumentor
+from opentelemetry.instrumentation.requests import RequestsInstrumentor
+from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+
+# Honeycomb
+# Initialize tracing and an exporter that can send data to Honeycomb
+provider = TracerProvider()
+processor = BatchSpanProcessor(OTLPSpanExporter())
+provider.add_span_processor(processor)
+trace.set_tracer_provider(provider)
+tracer = trace.get_tracer(__name__)
+
+# Honeycomb
+# Initialize automatic instrumentation with Flask
+FlaskInstrumentor().instrument_app(app)
+RequestsInstrumentor().instrument()
+```
+
+Add Enviroment variable in docker-compose.yml
+```yml
+OTEL_SERVICE_NAME: 'backend-flask'
+OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
+OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
+```
+
+Login into your honecomb.io account and copy API Key add key into Gitpod environment variable.
+
+```
+gp env HONEYCOMB_API_KEY=""
+```
+
+We are creating span and attribute for that need to updated code in home_activities.py
+
+```py
+from opentelemetry import trace
+tracer = trace.get_tracer("home.activities")
+
+with tracer.start_as_current_span("home-activities-mock-data"):
+    span = trace.get_current_span()
+    
+span.set_attribute("app.now", now.isoformat())
+
+span.set_attribute("app.result_lenght", len(results))
+```
 
 Output of the queries run to explore traces within Honeycomb.io
 
