@@ -1,5 +1,12 @@
 # Week 2 — Distributed Tracing
 
+## What is the need for Distributed Tracing system
+1 Trace user requests through your application while meeting your security and compliance objectives.
+2 Identify bottlenecks and determine where high latencies are occurring to improve application performance.
+3 Remove data silos and get the information you need to improve user experience and reduce downtime.
+4 Debug serverless applications in real time, and monitor both cloud cost and performance metrics.
+
+
 ### TASK 1 
 Instrumented backend flask application to use Open Telemetry (OTEL) with Honeycomb.io as the provider. 
 
@@ -158,6 +165,8 @@ AWS Xray Screenshot.
 
 ![Screenshot 2023-03-05 at 11 20 52 AM](https://user-images.githubusercontent.com/125124581/223090128-fc85296e-b1ac-419e-936c-2edca9a093fd.png)
 
+Subsegment configuration screenshot
+
 ![Screenshot 2023-03-05 at 11 59 24 AM](https://user-images.githubusercontent.com/125124581/223090233-c7569a81-7743-4b6a-9423-a9a75e1d219d.png)
 
 
@@ -277,3 +286,28 @@ def rollbar_test():
 Screenshot of error response in Rollbar
 
 ![Screenshot 2023-03-05 at 2 33 17 PM](https://user-images.githubusercontent.com/125124581/223089870-0d984174-c18a-4dbf-b235-e4b96d94eceb.png)
+
+
+# Homework Challege
+
+## Task 1: Adding custom span with userid 
+
+Added below code in home_activities.py
+
+```py
+handle = results[0]['handle']
+span.set_attribute("app.user_id", handle)
+```
+Screenshot of span in Honecomb.
+
+![Screenshot 2023-03-06 at 5 45 52 PM](https://user-images.githubusercontent.com/125124581/223110068-3ef4a7b6-a560-4030-9e76-52f9b57d429e.png)
+
+## Task 2: Run Custom Queries in Honeycomb
+
+Run custom query to check latency by userid
+
+![Screenshot 2023-03-06 at 6 05 41 PM](https://user-images.githubusercontent.com/125124581/223112092-447f9a5f-c028-4d0d-b4aa-db6675cffc22.png)
+
+
+
+
