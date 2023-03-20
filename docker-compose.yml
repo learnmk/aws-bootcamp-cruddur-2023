@@ -21,6 +21,10 @@ services:
   frontend-react-js:
     environment:
       REACT_APP_BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+      REACT_APP_AWS_PROJECT_REGION: "us-east-1"
+      REACT_APP_AWS_COGNITO_REGION: "us-east-1"
+      REACT_APP_AWS_USER_POOLS_ID: "us-east-1_oxf45QDXx"
+      REACT_APP_CLIENT_ID: "58fgj37k15shucf4nf3taip51c"
     build: ./frontend-react-js
     ports:
       - "3000:3000"
@@ -32,10 +36,6 @@ services:
       AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
       AWS_REGION: "us-east-1"
-      REACT_APP_AWS_PROJECT_REGION: "${AWS_REGION}"
-      REACT_APP_AWS_COGNITO_REGION: "${AWS_REGION}"
-      REACT_APP_AWS_USER_POOLS_ID: "us-east-1_oxf45QDXx"
-      REACT_APP_CLIENT_ID: "58fgj37k15shucf4nf3taip51c"
     command:
       - "xray -o -b xray-daemon:2000"
     ports:
